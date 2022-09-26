@@ -20,9 +20,12 @@ const Column = ({
   const renderList = () => {
     return (
       <ul className="list">
-        {columnData.list.map(card => {
+        {columnData.list.map((card, index) => {
           return (
-            <li className="item">
+            <li 
+              key={index}
+              className="item"
+            >
               <button className="card-btn drag">
                 <span>{card.title}</span>
                 <FontAwesomeIcon icon={faGrip} />
