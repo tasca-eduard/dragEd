@@ -1,0 +1,24 @@
+.column {
+  background: var(--ternaryBg);
+  padding: 24px 14px;
+  border-top: 2px solid var(--accent);
+
+  .name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .list {
+    margin: 10px 0;
+  }
+
+  .item {
+    background: var(--primaryBg);
+    margin-bottom: 10px;
+    border-radius: 7px;
+  }
+
+  .card-btn {
+    width: 100%;
+  }
+}

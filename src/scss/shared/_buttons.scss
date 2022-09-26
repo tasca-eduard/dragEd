@@ -1,0 +1,117 @@
+.btn {
+    width: 100%;
+    border: none;
+    border: 2px solid var(--secondaryBg);
+    border-bottom: 2px solid var(--primaryBorder);
+    border-radius: 6px;
+    background: var(--secondaryBg);
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &:hover,
+    &:focus {
+        background: var(--secondaryBgDark);
+        border-bottom: 2px solid var(--accent);
+        outline: none;
+    }
+}
+
+.card-btn {
+    padding: 24px 14px;
+    text-align: left;
+    font-weight: 500;
+
+    &.drag {
+        position: relative;
+
+        svg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(-25%, 50%);
+            opacity: .4;
+        }
+    }
+}
+
+.nav-link {
+    background: transparent;
+    padding: 10px 16px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    flex-grow: 1;
+    border: none;
+    transition: .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+    position: relative;
+
+    &::first-letter {
+        color: rgba(var(--primaryText), .8);
+    }
+
+    &:hover,
+    &:focus-visible {
+        background: var(--primaryBgLight);
+    }
+
+    &.active {
+        &::before {
+            background: var(--accent);
+        }
+
+        &::first-letter,
+        svg path {
+            color: var(--accent);
+        }
+    }
+
+    &::after {
+        content: none;
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    &.round {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        .svg-inline--fa {
+            padding-right: 0;
+        }
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+
+    svg {
+        color: rgba(var(--primaryText), .8);
+    }
+ 
+    @media screen and (max-width: 767px) {
+        &.round {
+            background: var(--secondaryBgDark);
+        }
+    }
+  } 
