@@ -1,0 +1,9 @@
+.board {
+  display: flex;
+  column-gap: 15px;
+
+  .column {
+    max-width: 240px;
+    width: 100%;
+  }
+}

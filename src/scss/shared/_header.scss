@@ -1,0 +1,41 @@
+.header {
+    background: var(--ternaryBg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+
+    .header-container {
+        padding-block: 10px;
+        transition: .3s ease-in-out;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-item {
+        display: flex;
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 20px;
+
+        .nav-list {
+            .nav-link {
+                background: var(--secondaryBg);
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .nav-list {
+            .nav-item {
+                margin-left: 16px;
+            }
+        }
+    }
+}

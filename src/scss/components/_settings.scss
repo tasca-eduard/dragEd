@@ -1,0 +1,117 @@
+.settings {
+  position: relative;
+
+  path {
+    transition: .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .trigger {
+    border: none;
+    transition: .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:focus {
+      background: transparent;
+      transform: rotate(-45deg);
+      bottom: 2px;
+
+      path {
+        fill: var(--accent);
+      }
+
+      & + {
+        .options {
+          opacity: 1;
+          margin-top: 0px;
+          border-top: 1px solid var(--accent);
+          transform: translateX(-50%) scale(1);
+          transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+      }
+    }
+  }
+
+  .options {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    margin-top: -10px;
+    opacity: 0;
+    transition: .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0px var(--primaryShadow);
+    transform: scale(0);
+    background: var(--ternaryBg);
+  }
+
+  .list {
+    margin-left: 0;
+  }
+  
+  .name {
+    padding: 4px 14px 4px 8px;
+    margin: 4px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--ternaryBg);
+    color: rgba(var(--primaryText), .5);
+    display: inline-block;
+    width: 100%;
+  }
+
+  .option {
+    .btn {
+      &.active {
+        path {
+          fill: var(--accent);
+        }
+      }
+
+      text-align: left;
+      padding: 10px 14px 10px 8px;
+      border: none;
+      border-radius: 0;
+      font-size: 12px;
+      justify-content: flex-start;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .options {
+      margin-top: 10px;
+      top: 0;
+      display: flex;
+      flex-wrap: wrap;
+      width: 90vw;
+    }
+
+    .category {
+      width: 50%;
+
+      &:last-of-type {
+        width: 100%;
+      
+        .list {
+          display: flex;
+          
+          .option {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    .trigger {
+      box-shadow: 0 0 10px -4px var(--primaryShadow);
+      background: var(--secondaryBg);
+
+      &:focus {
+        background: var(--secondaryBgLight);
+
+        & + .options {
+          transform: translate(-50%, calc(-100% - 10px)) scale(1);
+        }
+      }
+    }
+  }
+}
